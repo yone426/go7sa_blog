@@ -1,0 +1,16 @@
+<div class="container">
+    <%= form_with model: @tweet, local: true do |form| %>
+      <%= form.text_field :name, placeholder: "Nickname" %>
+      <%= form.text_area :text, placeholder: "text" %>
+      <%= form.submit "SEND" %>
+    <% end %>
+</div>
+
+<div class="contents">
+  <% @tweets.each do |tweet| %>
+    <div class="content">
+        <%= tweet.text %>
+        <%= tweet.name %>
+    </div>
+  <% end %>
+</div>
